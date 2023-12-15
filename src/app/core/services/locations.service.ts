@@ -23,7 +23,7 @@ export class LocationsService {
     let params: HttpParams = new HttpParams();
     params = params.append('apikey', http.KEY);
 
-    return this.HttpClient.get<GetLocationResponse>(`http://dataservice.accuweather.com/locations/v1/${key}`, { params })
+    return this.HttpClient.get<GetLocationResponse>(`${http.API}/locations/v1/${key}`, { params })
       .pipe(map(res => {
         return { key, name: `${res.LocalizedName}, ${res.Country.LocalizedName}` }
       }));
