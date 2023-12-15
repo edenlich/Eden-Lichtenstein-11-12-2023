@@ -39,7 +39,6 @@ export class CurrentWeatherItemComponent implements OnInit {
   }
 
   onRemoveFromFavorites() {
-    console.log('onRemoveFromFavorites-comppp', this.location.key);
     this.removeFromFavorites.emit(this.location.key);
   }
 }

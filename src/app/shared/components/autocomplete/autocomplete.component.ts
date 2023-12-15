@@ -44,10 +44,7 @@ export class AutocompleteComponent implements OnInit {
       .pipe(untilDestroyed(this))
       .subscribe({
         next: options => this.options = options,
-        error: err => {
-          console.log('error:', err)
-          this.snackBarService.openSnackBar(err.message)
-        },
+        error: err => this.snackBarService.openSnackBar(err.message),
       });
   }
 
